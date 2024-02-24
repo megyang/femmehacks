@@ -1,0 +1,26 @@
+.task-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.task-list h1 {
+    text-align: center;
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.task-list li.completed {
+    text-decoration: line-through;
+    background-color: #d3d3d3;
+}
