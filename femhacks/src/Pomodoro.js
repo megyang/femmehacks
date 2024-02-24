@@ -45,8 +45,10 @@ const Pomodoro = () => {
             <div className="timer">
                 {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
             </div>
-            <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
-            <button onClick={resetTimer}>Reset</button>
+            <div className={"button-container"}>
+                <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
+                <button onClick={resetTimer}>Reset</button>
+            </div>
         </div>
     );
 };
