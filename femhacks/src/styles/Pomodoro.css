@@ -1,16 +1,107 @@
+@font-face {
+    font-family: 'Ocean Type';
+    src: url('./fonts/OceantypepersonaluseBoldita-PKEAE.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Water Park';
+    src: url('./fonts/WaterPark-6L2M.ttf') format('opentype');
+}
+
+
+@font-face {
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+}
+
+.ripple-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: ripple-animation 4s infinite;
+}
+
+@keyframes ripple-animation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Position and delay each ripple */
+.ripple:nth-child(1) {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.ripple:nth-child(2) {
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.ripple:nth-child(3) {
+    top: 80%;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.ripple:nth-child(4) {
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.ripple:nth-child(5) {
+    top: 80%;
+    left: 40%;
+    animation-delay: 4s;
+}
+
 .pomodoro {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
+    font-family: 'Water Galon', sans-serif;
+    font-size: 40px;
 }
 
 .pomodoro .timer {
     font-size: 200px;
     font-weight: bold;
+    font-family: 'Water Galon', sans-serif;
     margin-bottom: 20px;
+}
+
+.pomodoro.pomodoro {
+    background-color: transparent;
+}
+
+.pomodoro.shortBreak {
+    background-color: #87CEEB;
+}
+
+.pomodoro.longBreak {
+    background-color: #87CEEB;
 }
 
 .pomodoro .button-container {
@@ -18,8 +109,243 @@
     justify-content: center;
 }
 
+.pomodoro .button-container button,
+.pomodoro .mode-container button {
+    background-color: orange;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Water Galon', sans-serif;
+}
+
+.pomodoro .button-container button:hover,
+.pomodoro .mode-container button:hover {
+    background-color: #ff7f50;
+}
+
+.pomodoro .button-container button:before,
+.pomodoro .mode-container button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease;
+}
+
+.pomodoro .button-container button:hover:before,
+.pomodoro .mode-container button:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.pomodoro .button-container button:after,
+.pomodoro .mode-container button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.pomodoro .button-container button:hover:after,
+.pomodoro .mode-container button:hover:after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+
 .pomodoro button {
     margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
 }
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.water-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #87CEEB;
+    z-index: -1;
+}
+
+.water-canvas::before,
+.water-canvas::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: ripple 2s infinite;
+}
+
+.water-canvas::after {
+    animation-delay: 1s;
+}
+
+.fish {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    border-radius: 50px 50px 0 0;
+    animation: swim 20s infinite linear;
+}
+
+.fish-body {
+    position: relative;
+    margin-top: 30px;
+    margin-left: 40px;
+    background-color: orange;
+    border-radius: 50%;
+    width: 150px;
+    height: 100px;
+}
+
+.eye {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 30px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.pupil {
+    position: absolute;
+    z-index: 2;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: black;
+    border-radius: 70%;
+    height: 15px;
+    width: 15px;
+}
+
+.fin {
+    margin-top: -100px;
+    background-color: orange;
+    border-radius: 50%;
+    transform: rotate(40deg);
+    width: 80px;
+    height: 50px;
+}
+
+.fin-bottom {
+    margin-top: -10px;
+    transform: rotate(-40deg);
+}
+@keyframes swim {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.fish1 {
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation-name: swimLeft, swimUp;
+}
+
+.fish2 {
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    animation-name: swimRight, swimDown;
+}
+
+.fish3 {
+    left: 100%;
+    top: 70%;
+    transform: translateY(-50%);
+    animation-name: swimLeft, swimDown;
+}
+
+.fish4 {
+    left: -25px;
+    top: 75%;
+    transform: translateX(-7%);
+    animation-name: swimUp, swimRight;
+}
+
+.fish5 {
+    left: 75%;
+    top: -25px;
+    transform: translateY(-83%);
+    animation-name: swimDown, swimUp;
+}
+
+@keyframes swimLeft {
+    0% {
+        left: -50px;
+    }
+    100% {
+        left: calc(100% + 50px);
+    }
+}
+
+@keyframes swimRight {
+    0% {
+        left: calc(100% + 50px);
+    }
+    100% {
+        left: -50px;
+    }
+}
+
+@keyframes swimUp {
+    0% {
+        top: 50%;
+    }
+    100% {
+        top: 10%;
+    }
+}
+
+@keyframes swimDown {
+    0% {
+        top: -30px;
+    }
+    100% {
+        top: 70%;
+    }
+}
+
