@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: orange;
+    margin: 0;
+    padding: 0;
+    font-family: 'Water Galon', sans-serif;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-family: 'Water Galon', sans-serif;
+}
+
+.navbar a:hover {
+    color: #5E9ED6;
+}
+
+.navbar .active {
+    color: #FDF5E6;
+}
