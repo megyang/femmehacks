@@ -1,26 +1,326 @@
+:root {
+    --color-deep-blue: #003366;
+    --color-goldfish-orange: #FFA500;
+    --color-sky-blue: #87CEEB;
+    --color-coral-pink: #FF7F50;
+    --color-aquamarine: #7FFFD4;
+}
+.section-deep-blue .tasks-container .task:before,
+.section-deep-blue .tasks-container .check-circle.checked,
+.section-deep-blue .add-task-btn,
+.section-deep-blue .tasks-container .task .task-time {
+    background-color: var(--color-deep-blue);
+    border-color: var(--color-deep-blue);
+    color: var(--color-deep-blue);
+}
+
+.section-goldfish-orange .tasks-container .task:before,
+.section-goldfish-orange .tasks-container .check-circle.checked,
+.section-goldfish-orange .add-task-btn,
+.section-goldfish-orange .tasks-container .task .task-time {
+    background-color: var(--color-goldfish-orange);
+    border-color: var(--color-goldfish-orange);
+    color: var(--color-goldfish-orange);
+}
+
+.section-sky-blue .tasks-container .task:before,
+.section-sky-blue .tasks-container .check-circle.checked,
+.section-sky-blue .add-task-btn,
+.section-sky-blue .tasks-container .task .task-time {
+    background-color: var(--color-sky-blue);
+    border-color: var(--color-sky-blue);
+    color: var(--color-sky-blue);
+}
+
+.section-coral-pink .tasks-container .task:before,
+.section-coral-pink .tasks-container .check-circle.checked,
+.section-coral-pink .add-task-btn,
+.section-coral-pink .tasks-container .task .task-time {
+    background-color: var(--color-coral-pink);
+    border-color: var(--color-coral-pink);
+    color: var(--color-coral-pink);
+}
+
+.section-aquamarine .tasks-container .task:before,
+.section-aquamarine .tasks-container .check-circle.checked,
+.section-aquamarine .add-task-btn,
+.section-aquamarine .tasks-container .task .task-time {
+    background-color: var(--color-aquamarine);
+    border-color: var(--color-aquamarine);
+    color: var(--color-aquamarine);
+}
+
+
 .task-list {
-    max-width: 600px;
-    margin: 0 auto;
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     padding: 20px;
+    background-color: #87CEEB;
+    box-sizing: border-box;
 }
 
-.task-list h1 {
-    text-align: center;
+
+
+.sections-container {
+    display: flex;
+    overflow-x: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.sections-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
 }
 
-.task-list ul {
-    list-style: none;
-    padding: 0;
+.section {
+    width: 300px;
+    margin-right: 10px;
+    flex-shrink: 0;
 }
 
-.task-list li {
-    background-color: #f4f4f4;
-    margin-bottom: 5px;
-    padding: 10px;
+.category-title {
+    position: sticky;
+    top: 0;
+    background: transparent;
+    z-index: 10;
+    padding: 10px 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    box-shadow: none;
+    text-align: left;
+}
+
+.tasks-container {
+    overflow-y: auto;
+    max-height: calc(100vh - 160px);
+}
+
+.task {
+    background: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.task-details {
+    flex-grow: 1;
+    padding-right: 100px; /* Give space for the time */
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.task-description {
+    font-size: 14px;
+    color: #888;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.task-time {
+    font-size: 14px;
+    color: #555;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.task:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #007bff; /* Change as per your design */
+}
+
+.check-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #5cb85c;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
-.task-list li.completed {
-    text-decoration: line-through;
-    background-color: #d3d3d3;
+.check-circle.checked {
+    background-color: #5cb85c;
 }
+
+.checkmark {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.task-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ... existing styles ... */
+
+.add-task-btn {
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+    background: #5cb85c;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+    margin: 10px 20px; /* Provide some space around the button */
+}
+
+.add-task-btn:hover {
+    background: #4cae4c;
+}
+
+.task-input {
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-input input,
+.task-input button {
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+    padding: 10px;
+    margin-bottom: 8px; /* Space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Account for padding and border */
+}
+
+.task-input button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.task-input button:hover {
+    background: #0069d9;
+}
+
+.add-section {
+    background: #f7f7f7;
+    min-width: 300px; /* Same as .section width */
+    border-radius: 8px;
+    margin: 10px;
+    flex-shrink: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.add-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 10px 20px;
+    width: 80%; /* Allow space for the button */
+    margin-bottom: 1px;
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+}
+
+.add-section button {
+    font-family: 'Water Galon';
+    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 20px;
+    transition: background 0.3s ease;
+}
+
+.add-section button:hover {
+    background: #218838;
+}
+
+/* Scrollbar styles for tasks container */
+.tasks-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tasks-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+body {
+    background-color: #87CEEB;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .category-title {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .add-task-btn,
+    .task-input input,
+    .task-input button,
+    .add-section input,
+    .add-section button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .sections-container {
+        gap: 10px;
+    }
+
+    .section {
+        min-width: 200px;
+    }
+}
+  
