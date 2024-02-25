@@ -110,6 +110,7 @@
 }
 
 .task-details {
+    text-align: left;
     flex-grow: 1;
     padding-right: 100px; /* Give space for the time */
 }
