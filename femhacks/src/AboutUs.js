@@ -1,38 +1,18 @@
 import React from 'react';
 import './styles/AboutUs.css';
 
-<<<<<<< HEAD
 const people = [
     {
         name: 'Angie Cao',
-        linkedInUrl: 'https://www.linkedin.com/in/angelina-cao-78a0551a5/',
-    },
-    {
-        name: 'Joyce Chen',
-        linkedInUrl: 'https://www.linkedin.com/in/joyce-chen-75665b226/',
-    },
-    {
-        name: 'Megan Yang',
-        linkedInUrl: 'https://www.linkedin.com/in/megan-yang-bb7232213/',
-=======
-// Import the images, assuming they are placed in the public/assets folder
-// You can adjust the paths based on your project structure
-const people = [
-    {
-        name: 'Angie Cao',
-        imageSrc: '/assets/angie_cao.jpg',
         linkedInUrl: 'https://www.linkedin.com/in/angie-cao/',
     },
     {
         name: 'Joyce Chen',
-        imageSrc: '/assets/joyce_chen.jpg',
         linkedInUrl: 'https://www.linkedin.com/in/joyce-chen/',
     },
     {
         name: 'Megan Yang',
-        imageSrc: '/assets/megan_yang.jpg',
         linkedInUrl: 'https://www.linkedin.com/in/megan-yang/',
->>>>>>> a5e2c63bf0d4c756a6ec0577a0c0998e72d013d6
     },
 ];
 
@@ -54,8 +34,4 @@ const AboutUs = () => {
     );
 };
 
-<<<<<<< HEAD
 export default AboutUs;
-=======
-export default AboutUs;
->>>>>>> a5e2c63bf0d4c756a6ec0577a0c0998e72d013d6

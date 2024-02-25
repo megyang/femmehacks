@@ -2,12 +2,6 @@ h1 {
     font-family: 'Water Galon';
     src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
 }
-<<<<<<< HEAD
-h3 {
-    font-family: 'Water Galon';
-    src: url('./fonts/WaterGalon-9Y8o2.ttf') format('opentype');
-}
-=======
 
 h3 {
     font-family: 'Water Galon';
@@ -22,4 +16,3 @@ p {
 body {
     background-color: #87CEEB;
 }
->>>>>>> a5e2c63bf0d4c756a6ec0577a0c0998e72d013d6
